@@ -168,6 +168,11 @@
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
           username: "{{ api_key_username_cmc }}"
           password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-cmc vault_uri={{ vault_uri }}', errors='warn') }}"
+        - id: jenkins-github-hmcts-api-token_devops
+          type: cred-usrpwd
+          description: "Jenkins HMCTS GitHub credentials (Username/password format)"
+          username: "{{ api_key_username_devops }}"
+          password: "{{ lookup('azure_keyvault', 'secret_name=hmcts-github-apikey-devops vault_uri={{ vault_uri }}', errors='warn') }}"
         - id: jenkins-github-hmcts-api-token_div
           type: cred-usrpwd
           description: "Jenkins HMCTS GitHub credentials (Username/password format)"
