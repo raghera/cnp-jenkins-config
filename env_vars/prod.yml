@@ -283,7 +283,16 @@ organization_folders:
     jenkinsfile_path: ['Jenkinsfile_nightly']
     branches_to_include: 'master'
     regex_SCM_source_filter: '(fpl-.*)'
-
+  - name: 'HMCTS_Devops'
+    repo_owner: 'HMCTS'
+    displayName: 'HMCTS - DevOps'
+    description: 'HMCTS public repositories DevOps'
+    credentials_id: 'jenkins-github-hmcts-api-token_devops'
+    github_api_url: 'https://api.github.com'
+    jenkinsfile_path: ['Jenkinsfile_CNP', 'Jenkinsfile']
+    branchesToAutoBuild: '(PR-\d+.*|master)'
+    branches_to_include: 'master PR*'
+    regex_SCM_source_filter: '(devops.*)'
 
 jenkins_permissions_list:
   - permission: com.cloudbees.plugins.credentials.CredentialsProvider.Create:300e771f-856c-45cc-b899-40d78281e9c1
