@@ -14,7 +14,7 @@ jenkins:
   authorizationStrategy:
     globalMatrix:
       grantedPermissions:
-#        - "Overall/Administer:authenticated" # Uncomment when testing locally / in test environment
+        - "Overall/Administer:authenticated" # Uncomment when testing locally / in test environment
         - "Overall/Administer:300e771f-856c-45cc-b899-40d78281e9c1"
         - "Overall/Read:authenticated"
         - "View/Create:authenticated"
@@ -49,20 +49,20 @@ jenkins:
         - "SCM/Tag:authenticated"
 
   securityRealm:
-    saml:
-      binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-      displayNameAttributeName: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
-      groupsAttributeName: "http://schemas.microsoft.com/ws/2008/06/identity/claims/groups"
-      idpMetadataConfiguration:
-        period: 15
-        url: "https://login.microsoftonline.com/hmcts.net/FederationMetadata/2007-06/FederationMetadata.xml"
-      maximumAuthenticationLifetime: 1209600
-      usernameAttributeName: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
-      usernameCaseConversion: "none"
+#    saml:
+#      binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+#      displayNameAttributeName: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+#      groupsAttributeName: "http://schemas.microsoft.com/ws/2008/06/identity/claims/groups"
+#      idpMetadataConfiguration:
+#        period: 15
+#        url: "https://login.microsoftonline.com/hmcts.net/FederationMetadata/2007-06/FederationMetadata.xml"
+#      maximumAuthenticationLifetime: 1209600
+#      usernameAttributeName: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+#      usernameCaseConversion: "none"
 # uncomment when testing your own jenkins build / local testing (also uncomment admin:authenticated in grantedPermissions)
 #  securityRealm:
-#    local:
-#      allowsSignup: false
-#      users:
-#        - id: "admin"
-#          password: "admin"
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin"
